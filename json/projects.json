@@ -5,21 +5,21 @@
 		"tagLine": "This is my submission for 2010 JS1K competition, which is about writing Javascript programs that fit in under 1k.",
 
 		"carousel": {
-			"actionButtons": {
-				"open": {
+			"actionButtons": [
+				{
 					"label": "Open Demo",
 					"icon": "icon-play-circle icon-white",
 					"link": "/demos/spiro.html",
 					"class": "btn-success"
 				},
-				"source": {
+				{
 					"label": "View Source",
 					"icon": "icon-file icon-white",
 					"link": "/demos/spiro.js",
 					"class": "btn-primary"
 
 				}
-			},
+			],
 			"items": [
 				{
 					"image": "img/spiro/spiro3-1170.png",

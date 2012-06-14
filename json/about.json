@@ -1,0 +1,20 @@
+{
+	"overview": [
+		"Born in 1987 in Germany, I finished school in 2008 with a specialization in Math and French and went to study knowledge engineering at the Maastricht University in the same year.",
+		"In 2010 I started working for the Department of Marketing and Communications of the Maastricht University as a student assistant working mainly on their website and other web projects.",
+		"From 2011 until 2012 I was a web developer at Ideaspool, where we continued the collaboration with the Maastricht University and a diverse list of other clients."
+	],
+
+	"personalFacts": [
+		{"label": "Age", "items": ["24"]},
+		{"label": "Nationality", "items": ["German"]},
+		{"label": "Hometown", "items": ["Kiel"]},
+		{"label": "Spoken Languages", "items": ["German","English","French","Dutch"]}
+	],
+
+	"technicalSkills": [
+		{"label": "Programming Languages", "items": ["Javascript","Python","PHP","Java"]},
+		{"label": "Technologies", "items": ["Backbone.js","Knockout.js","HTML5","LESS","Twitter Bootstrap"]}
+	]
+
+}
