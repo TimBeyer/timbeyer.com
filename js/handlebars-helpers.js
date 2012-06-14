@@ -3,7 +3,7 @@ Handlebars.registerHelper("log", function(optionalValue) {
 });
 
 Handlebars.registerHelper("dl", function(list) {
-	console.log("DL:", this, "List:", list);
+	//console.log("DL:", this, "List:", list);
 	var outputString = "";
 	outputString += "<dl>";
 	for(var i = 0, l = list.length; i < l; i++){
@@ -23,5 +23,54 @@ Handlebars.registerHelper("dl", function(list) {
 	}
 	outputString += "</dl>";
 
+	return new Handlebars.SafeString(outputString);
+});
+
+
+Handlebars.registerHelper("p", function(paragraphs) {
+	//console.log("P:", this, "Paragraphs:", paragraphs);
+	var outputString = "";
+	if(Object.prototype.toString.call(paragraphs) === '[object Array]'){
+		for(var i = 0, l = paragraphs.length; i < l; i++){
+			var p = paragraphs[i];
+			outputString += "<p>"+p+"</p>";
+		}	
+	}
+	else{
+		outputString += "<p>" + paragraphs + "</p>";
+	}
+
+	return new Handlebars.SafeString(outputString);
+});
+
+Handlebars.registerHelper("carouselItem", function(item, isActive) {
+	console.log("CarouselItem:", this, "Item:", item, "isActive", isActive);
+	var outputString = "";
+	outputString += ("<div class=\"item " + (isActive ? "active" : "") + " \">");
+	outputString += "<img src=\""+ item.image +"\"></img>";
+	if(item.caption){
+
+		outputString += "<div class=\"carousel-caption\">";
+		outputString += "<h4>"+ item.caption.heading +"</h4>";
+		outputString += "<p>"+ item.caption.content +"</p>";
+		outputString += "</div>";
+	}
+	outputString += "</div>"
+	return new Handlebars.SafeString(outputString);
+});
+
+Handlebars.registerHelper("carouselItems", function(items) {
+	console.log("Carouselitems:", this, "Items:", items);
+	var outputString = "";
+	for(var i = 0, il = items.length; i < il; i++){
+		if(i === 0){
+			outputString += Handlebars.helpers['carouselItem'].call(this, items[i], true);
+		}
+		else{
+			outputString += Handlebars.helpers['carouselItem'].call(this, items[i], false);
+
+		}
+	}
+	console.log(outputString);
 	return new Handlebars.SafeString(outputString);
 });

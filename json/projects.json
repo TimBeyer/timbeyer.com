@@ -22,6 +22,9 @@
 			],
 			"items": [
 				{
+					"image": "img/spiro/spiro5-1170.png"
+				},
+				{
 					"image": "img/spiro/spiro3-1170.png",
 					"caption": {
 						"heading": "Test",

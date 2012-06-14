@@ -89,12 +89,7 @@
 		
 		<div class="span6">
 			<h2>Overview</h2>
-
-			{{#each overview}}
-			<p>
-				{{this}}
-			</p>
-			{{/each}}
+			{{p overview}}
 		</div>
 
 		<div class="span3">
@@ -126,17 +121,9 @@
 						{{/each}}
 						</div>
 					{{/if}}
-					{{#each items}}
-						<div class="item">
-							<img src="{{image}}"></img>
-							{{#if caption}}
-							<div class="carousel-caption">
-								<h4>{{caption.heading}}</h4>
-								<p>{{caption.content}}</p>
-							</div>
-							{{/if}}
-						</div>
-					{{/each}}
+					
+					{{carouselItems items}}
+					
 					</div>
 					<!-- Carousel nav -->
 					<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
