@@ -1,0 +1,48 @@
+[
+	{
+		"name": "Spirograph",
+		"tabName": "JS1K Spiro",
+		"tagLine": "This is my submission for 2010 JS1K competition, which is about writing Javascript programs that fit in under 1k.",
+
+		"carousel": {
+			"actionButtons": {
+				"open": {
+					"label": "Open Demo",
+					"icon": "icon-play-circle icon-white",
+					"link": "/demos/spiro.html",
+					"class": "btn-success"
+				},
+				"source": {
+					"label": "View Source",
+					"icon": "icon-file icon-white",
+					"link": "/demos/spiro.js",
+					"class": "btn-primary"
+
+				}
+			},
+			"items": [
+				{
+					"image": "img/spiro/spiro3-1170.png",
+					"caption": {
+						"heading": "Test",
+						"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+					}
+				},
+				{
+					"image": "img/spiro/spiro1-1170.png"
+				},
+				{
+					"image": "img/spiro/spiro4-1170.png"
+				}
+			]
+		},
+
+		"description": "Creates random animated Spirograph patterns\nLeft click to add another random pattern on top\nPress \"C\" to toggle colors\nPress \"F\" to toggle fade effect\nPress \"P\" to pause\nPress \"Space\" to reset\nPress \"S\" to save the picture",
+		"facts": [
+			{"label": "Language", "items": ["Javascript"]},
+			{"label": "Size", "items": ["1022 bytes"]},
+			{"label": "Link", "items": [{"link": "http://js1k.com/2010-first/demo/281", "label": "http://js1k.com/2010-first/demo/281"}]}
+		]
+	}
+
+]
