@@ -51,15 +51,14 @@
 		</div>
 	</div>
 	<div class="container">
-		<header>
-			<div class="hero-unit">
-				<h1>Tim Beyer</h1>
-				<p>Software engineer, web developer</p>
-			</div>
+		<header class="jumbotron masthead">
+			<h1>Tim Beyer</h1>
+			<p class="lead">Software engineer, web developer</p>
 		</header>
 		<section id="about-me">
 			<div class="page-header">
-				<h1>About me</h1>
+				<h1>About me <a href="json/about.json"><span class="label label-info">.json</span></a></h1>
+				
 			</div>
 
 			<div class="row" id="about-container">
@@ -70,7 +69,7 @@
 
 		<section id="projects">
 			<div class="page-header">
-				<h1>Projects and code</h1>
+				<h1>Projects and code <a href="json/projects.json"><span class="label label-info">.json</span></a></h1>
 			</div>
 
 			<div class="row" id="projects-container">
@@ -121,11 +120,11 @@
 		{{/row}}
 		{{#row}}
 			{{#span 9}}
-				<h4>Description</h4>
+				<h3>Description</h3>
 				<pre>{{description}}</pre>
 			{{/span}}
 			{{#span 3}}
-				<h4>Facts</h4>
+				<h3>Facts</h3>
 				{{dl facts}}
 			{{/span}}
 		{{/row}}
