@@ -11,26 +11,7 @@
 	<!--<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>-->
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="js/bootstrap/bootstrap-alert.js"></script>
-	<script src="js/bootstrap/bootstrap-button.js"></script>
-	<script src="js/bootstrap/bootstrap-carousel.js"></script>
-	<script src="js/bootstrap/bootstrap-collapse.js"></script>
-	<script src="js/bootstrap/bootstrap-dropdown.js"></script>
-	<script src="js/bootstrap/bootstrap-modal.js"></script>
-	<script src="js/bootstrap/bootstrap-tooltip.js"></script>
-	<script src="js/bootstrap/bootstrap-popover.js"></script>
-	<script src="js/bootstrap/bootstrap-scrollspy.js"></script>
-	<script src="js/bootstrap/bootstrap-tab.js"></script>
-	<script src="js/bootstrap/bootstrap-transition.js"></script>
-	<script src="js/bootstrap/bootstrap-typeahead.js"></script>
 
-	<script src="js/underscore.js"></script>	
-	<script src="js/backbone.js"></script>
-
-	<script src="js/handlebars-1.0.0.beta.6.js"></script>
-	<script src="js/handlebars-helpers.js"></script>
-
-	<script src="js/app.js"></script>
 
 </head>
 <body data-spy="scroll">
@@ -138,5 +119,27 @@
 
 	</script>
 
+	<!-- Load all scripts after content was rendered -->
+	<script src="js/bootstrap/bootstrap-alert.js"></script>
+	<script src="js/bootstrap/bootstrap-button.js"></script>
+	<script src="js/bootstrap/bootstrap-carousel.js"></script>
+	<script src="js/bootstrap/bootstrap-collapse.js"></script>
+	<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+	<script src="js/bootstrap/bootstrap-modal.js"></script>
+	<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+	<script src="js/bootstrap/bootstrap-popover.js"></script>
+	<script src="js/bootstrap/bootstrap-scrollspy.js"></script>
+	<script src="js/bootstrap/bootstrap-tab.js"></script>
+	<script src="js/bootstrap/bootstrap-transition.js"></script>
+	<script src="js/bootstrap/bootstrap-typeahead.js"></script>
+	<script src="js/bootstrap/bootstrap-custom.js"></script>
+
+	<script src="js/underscore.js"></script>	
+	<script src="js/backbone.js"></script>
+
+	<script src="js/handlebars-1.0.0.beta.6.js"></script>
+	<script src="js/handlebars-helpers.js"></script>
+
+	<script src="js/app.js"></script>
 </body>
 </html>
