@@ -3,9 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<!--
 	<link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
 	<script> less = {env:'development'};</script>
 	<script src="js/less-1.3.0.min.js"></script>
+	-->
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="js/bootstrap/bootstrap-alert.js"></script>
@@ -30,7 +33,7 @@
 	<script src="js/app.js"></script>
 
 </head>
-<body>
+<body data-spy="scroll">
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -38,7 +41,8 @@
 
 				<div id="main-nav" class="nav-collapse">
 					<ul class="nav">
-						<li><a href="#about">About</a></li>
+						<li><a href="#about-me">About</a></li>
+						<li><a href="#projects">Projects</a></li>
 					</ul>
 				</div>
 
@@ -58,7 +62,9 @@
 				<h1>About me</h1>
 			</div>
 
-			<div class="row" id="about-container"></div>
+			<div class="row" id="about-container">
+				<img src="img/spinner.gif"></img>
+			</div>
 		</section>
 
 
@@ -87,60 +93,42 @@
 
 	<script type="text/x-handlebars-template" id="about-page-tmpl">
 		
-		<div class="span6">
+		{{#span 6}}
 			<h2>Overview</h2>
 			{{p overview}}
-		</div>
+		{{/span}}
 
-		<div class="span3">
+		{{#span 3}}
 			<h2>Personal Facts</h2>
 			{{dl personalFacts}}
-		</div>
+		{{/span}}
 
-		<div class="span3">
+		{{#span 3}}
 			<h2>Technical skills</h2>
 			{{dl technicalSkills}}
-		</div>
+		{{/span}}
 	</script>
 
 	<script type="text/x-handlebars-template" id="project-tab-pane-tmpl">
 
-		<h3>{{name}}</h3>
+		<h2>{{name}}</h2>
 		<p>{{tagLine}}</p>
 
-		<div class="row">
-			<div class="span12">
-			{{#with carousel}}
-				<div id="myCarousel" class="carousel project-carousel slide">
-					<!-- Carousel items -->
-					<div class="carousel-inner">
-					{{#if actionButtons}}
-						<div class="btn-group carousel-action-buttons">
-						{{#each actionButtons}}
-							<a class="btn btn-large {{class}}" href="{{link}}"><i class="{{icon}}"></i> {{label}}</a>
-						{{/each}}
-						</div>
-					{{/if}}
-					
-					{{carouselItems items}}
-					
-					</div>
-					<!-- Carousel nav -->
-					<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-					<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-				</div>
-			{{/with}}
-			</div>
-		</div>
-		<div class="row">
-			<div class="span9">
+		{{#row}}
+			{{#span 12}}
+				{{carousel this.carousel "projects-carousel"}}
+			{{/span}}
+		{{/row}}
+		{{#row}}
+			{{#span 9}}
 				<h4>Description</h4>
 				<pre>{{description}}</pre>
-			</div>
-			<div class="span3">
+			{{/span}}
+			{{#span 3}}
+				<h4>Facts</h4>
 				{{dl facts}}
-			</div>
-		</div>
+			{{/span}}
+		{{/row}}
 
 	</script>
 
