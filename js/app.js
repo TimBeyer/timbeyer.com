@@ -1,10 +1,42 @@
 (function(){
 
-	var data = {};
 
 	var domReady = $.Deferred();
 	var dataLoaded = $.Deferred();
 
+	var data = {};
+
+	var app = {
+
+		views: {
+			SectionView: Backbone.View.extend({
+
+				tagName: "section",
+
+				initialize: function(init){
+					// id is automatically filtered out and applied to the element
+					//this.title = init.title || 'Section';
+					this.template = Handlebars.compile($('#section-tmpl').html());
+					this.jsonData = init.jsonData;
+
+					this.contentView = init.contentView;
+
+				},
+
+				render: function(){
+					this.$el.empty();
+
+					this.$el.append(this.template(this.jsonData));
+
+					return this;
+				}
+			})
+		}
+	};
+
+
+
+	// Resolve domReady deferred on domReady
 	$(domReady.resolve);
 
 	console.log("Fetching data");
@@ -50,6 +82,18 @@
 			});
 			
 		})
+
+		var aboutSection = new app.views.SectionView({
+			id: "about",
+			title: "About me",
+			jsonData: {
+				title: "About me",
+				jsonLink: "json/about.json"
+			}
+		});
+
+		$('.main-content').append(aboutSection.render().el);
+		console.log(aboutSection.el);
 
 
 	})
