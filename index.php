@@ -4,11 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	
-	<link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+<!-- 	<link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
 	<script> less = {env:'development'};</script>
 	<script src="js/less-1.3.0.min.js"></script>
-
-	<!--<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>-->
+ -->
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
+	<link rel="stylesheet" href="css/prettify.css" type="text/css"></link>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
@@ -23,27 +24,9 @@
 		</header>
 
 		<div class="main-content">
-			<div class="subnav">
-
-				<ul class="nav nav-pills">
-					<li><a href="#about-me">About</a></li>
-					<li><a href="#projects">Projects</a></li>
-				</ul>
-
-			</div>			
-			<section id="about-me">
-				<div class="page-header">
-					<h1>About me <a href="json/about.json"><span class="label label-info">.json</span></a></h1>
-					
-				</div>
-
-				<div class="row" id="about-container">
-					<img src="img/spinner.gif"></img>
-				</div>
-			</section>
 
 
-			<section id="projects">
+<!-- 			<section id="projects">
 				<div class="page-header">
 					<h1>Projects and code <a href="json/projects.json"><span class="label label-info">.json</span></a></h1>
 				</div>
@@ -64,8 +47,64 @@
 				</div>
 
 			</section>
+			 -->
+
+
+			<!-- Fallback for browsers with JS disabled -->
+			<noscript>
+
+				<div class="row" style="text-align: center">
+					<h2>To see more information, please enable Javascript and reload the page</h2>
+				</div>
+				<section id="about">	
+					<div class="page-header">
+						<h1>About me <a href="json/about.json"><span class="label label-info">.json</span></a></h1>
+						
+					</div>
+
+					<div class="row section-content" id="about-container">
+		
+						<div class="span6">
+							<h2>Overview</h2>
+							<p>Born in 1987 in Germany, I finished school in 2008 with a specialization in Math and French and went to study knowledge engineering at the Maastricht University in the same year.</p><p>In 2010 I started working for the Department of Marketing and Communications of the Maastricht University as a student assistant working mainly on their website and other web projects.</p><p>From 2011 until 2012 I was a web developer at Ideaspool, where we continued the collaboration with the Maastricht University and a diverse list of other clients.</p><p>I enjoy working on user interfaces and data visualization, especially in the browser.</p>
+						</div>
+
+						<div class="span3">
+							<h2>Personal Facts</h2>
+							<dl><dt>Age</dt><dd>24</dd><dt>Nationality</dt><dd>German</dd><dt>Hometown</dt><dd>Kiel</dd><dt>Spoken Languages</dt><dd>German</dd><dd>English</dd><dd>French</dd><dd>Dutch</dd></dl>
+						</div>
+
+						<div class="span3">
+							<h2>Technical skills</h2>
+							<dl><dt>Programming Languages</dt><dd>Javascript</dd><dd>Python</dd><dd>PHP</dd><dd>Java</dd><dt>Technologies</dt><dd>Backbone.js</dd><dd>Knockout.js</dd><dd>HTML5</dd><dd>LESS</dd><dd>Twitter Bootstrap</dd></dl>
+						</div>
+					</div>
+				</section>
+			</noscript>
+			<!-- End Fallback -->
 		</div>
 	</div>
+
+	<script type="text/x-handlebars-template" id="tabs-tmpl">
+		<ul class="nav nav-tabs">
+		{{#each tabs}}
+			<li {{#if active}}class="active"{{/if}}><a href="#{{id}}" data-toggle="tab">{{name}}</a></li>
+		{{/each}}
+		</ul>		
+		<div class="tab-content">
+		{{#each tabs}}
+			<div class="tab-pane {{#if active}} active {{/if}} {{id}}" id=""></div>
+		{{/each}}
+		</div>
+	</script>
+
+	<script type="text/x-handlebars-template" id="navbar-tmpl">
+		<ul class="nav nav-pills">
+		{{#each navItems}}
+			<li><a href="#{{anchor}}">{{name}}</a></li>
+		{{/each}}
+		</ul>
+	</script>
 
 	<script type="text/x-handlebars-template" id="section-tmpl">	
 		<div class="page-header">
@@ -73,7 +112,7 @@
 			
 		</div>
 
-		<div class="row" id="{{id}}-container" class="section-content">
+		<div class="row section-content" id="{{id}}-container">
 			<img src="img/spinner.gif" class="spinner centered"></img>
 		</div>
 	</script>
@@ -96,7 +135,7 @@
 		{{/span}}
 	</script>
 
-	<script type="text/x-handlebars-template" id="project-tab-pane-tmpl">
+	<script type="text/x-handlebars-template" id="project-tmpl">
 
 		<h2>{{name}}</h2>
 		<p>{{tagLine}}</p>
@@ -120,6 +159,9 @@
 	</script>
 
 	<!-- Load all scripts after content was rendered -->
+	<script src="js/prettify/prettify.js"></script>
+	<script src="js/prettify/lang-css.js"></script>
+
 	<script src="js/bootstrap/bootstrap-alert.js"></script>
 	<script src="js/bootstrap/bootstrap-button.js"></script>
 	<script src="js/bootstrap/bootstrap-carousel.js"></script>
@@ -132,10 +174,14 @@
 	<script src="js/bootstrap/bootstrap-tab.js"></script>
 	<script src="js/bootstrap/bootstrap-transition.js"></script>
 	<script src="js/bootstrap/bootstrap-typeahead.js"></script>
+	
+	<!--<script src="js/bootstrap/bootstrap.min.js"></script>-->
 	<script src="js/bootstrap/bootstrap-custom.js"></script>
 
-	<script src="js/underscore.js"></script>	
-	<script src="js/backbone.js"></script>
+	<!--<script src="js/underscore.js"></script>-->	
+	<script src="js/underscore-min.js"></script>	
+	<!--<script src="js/backbone.js"></script>-->
+	<script src="js/backbone-min.js"></script>
 
 	<script src="js/handlebars-1.0.0.beta.6.js"></script>
 	<script src="js/handlebars-helpers.js"></script>

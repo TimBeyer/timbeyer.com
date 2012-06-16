@@ -1,9 +1,9 @@
 body{
 	margin-top: 60px;
-	/*background: url("../img/patterns/light_wool.png");*/
+	background: url("../img/patterns/light_wool.png");
 	/*background: url("../img/patterns/brilliant.png");*/
 	/*background: url("../img/patterns/lightpaperfibers.png");*/
-	background: url("../img/patterns/furley_bg.png");
+	/*background: url("../img/patterns/furley_bg.png");*/
 	/*background: url("../img/patterns/square_bg.png");*/
 	/*background: url("../img/patterns/pinstriped_suit.png");*/
 }
@@ -126,6 +126,8 @@ body{
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+
+  margin-bottom: 40px;
 }
 .subnav .nav {
   margin-bottom: 0;
@@ -176,7 +178,7 @@ body{
 @media (min-width: 980px) {
   .subnav-fixed {
     position: fixed;
-    top: 40px;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
@@ -191,7 +193,7 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); /* IE6-9 */
   }
   .subnav-fixed .nav {
-    width: 938px;
+    width: 940px;
     margin: 0 auto;
     padding: 0 1px;
   }
@@ -201,5 +203,13 @@ body{
        -moz-border-radius: 0;
             border-radius: 0;
   }
+}
+
+@media(min-width: 1200px) {
+	.subnav-fixed{
+		.nav{
+			width: 1170px;
+		}
+	}
 }
 
