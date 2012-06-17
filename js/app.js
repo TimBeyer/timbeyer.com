@@ -85,7 +85,7 @@
 			NavbarView: Backbone.View.extend({
 
 				tagName: 'div',
-				className: 'subnav',
+				className: 'subnav animate',
 
 				events: {
 					'click .nav a': 'smoothScrollToAnchor'
@@ -145,6 +145,7 @@
 			    		//app.updateScrollspy();
 
 			    	}
+			    	return true;
 				},
 
 				smoothScrollToAnchor: function(e){
@@ -167,7 +168,7 @@
 				startScrollHandling: function(){
 					this.navTop = this.$el.length && this.$el.offset().top;
 				    this.processScroll()
-				    $(window).on('scroll', _.throttle(this.processScroll,50));
+				    $(window).on('scroll', _.throttle(this.processScroll,33));
 				}
 
 			}),

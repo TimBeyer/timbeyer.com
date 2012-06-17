@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	
-<!-- 	<link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+	<link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
 	<script> less = {env:'development'};</script>
 	<script src="js/less-1.3.0.min.js"></script>
- -->
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
+
+	<!-- <link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link> -->
 	<link rel="stylesheet" href="css/prettify.css" type="text/css"></link>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -17,18 +17,18 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container" id="main-container">
 		<header class="jumbotron masthead">
 			<h1>Tim Beyer</h1>
 			<p class="lead">Software engineer, web developer</p>
 		</header>
 
-		<div class="main-content">
+		<div class="main-content" id="main-content">
 
 			<script>
 				//If we have scripting we'll want to add a spinner right now to make the site seem more responsive
-				//I know document.write is ugly and should never be used but this is one of those cases where it's ok
-				document.write('<img src="img/spinner-36.gif" class="spinner centered" id="main-spinner"></img>');
+				//I know document.write is ugly and should never be used but this is one of those cases where it's exactly what we need
+				document.write('<img src="img/spinner-36-2.gif" class="spinner centered" id="main-spinner"></img>');
 			</script>
 
 			<!-- Fallback for browsers with JS disabled -->
@@ -169,6 +169,14 @@
 		</div>
 	</script>
 
+	<script>
+		if(!window.console){
+			var x = function(){};
+			window.console = {
+				'log': x
+			}
+		}
+	</script>
 	<!-- Load all scripts after content was rendered -->
 	<script src="js/prettify/prettify.js"></script>
 	<script src="js/prettify/lang-css.js"></script>
