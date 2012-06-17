@@ -94,21 +94,21 @@ Handlebars.registerHelper("carousel", function(carousel, id) {
 
 	outputString += "<div id='"+id+"' class='carousel project-carousel slide'>";
 
-	//Inner part
-	outputString += "<div class='carousel-inner'>";
-
 	//Action buttons
 	if(carousel.actionButtons){
 		outputString += Handlebars.helpers['carouselActionButtons'].call(this, carousel.actionButtons);
 	}
+	//Inner part
+	outputString += "<div class='carousel-inner'>";
+
 
 	// Items
 	outputString += Handlebars.helpers['carouselItems'].call(this, carousel.items);
 	outputString += "</div>";
 
 	// Control Arrows
-	//outputString += "<a class='carousel-control left' href='#"+id+"' data-slide='prev'>&lsaquo;</a>";
-	//outputString += "<a class='carousel-control right' href='#"+id+"' data-slide='prev'>&rsaquo;</a>";
+	outputString += "<a class='carousel-control left' href='#"+id+"' data-slide='prev'>&lsaquo;</a>";
+	outputString += "<a class='carousel-control right' href='#"+id+"' data-slide='prev'>&rsaquo;</a>";
 
 	outputString += "</div>"
 	return new Handlebars.SafeString(outputString);
