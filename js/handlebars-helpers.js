@@ -82,7 +82,7 @@ Handlebars.registerHelper("carouselActionButtons", function(buttons) {
 	outputString += "<div class='btn-group carousel-action-buttons'>";
 	for(var i = 0, bl = buttons.length; i < bl; i++){
 		var button = buttons[i];
-		outputString += "<a class='btn btn-large " + button.class + "' href='"+button.link+"'><i class='"+button.icon+"'></i> " + button.label + "</a>";
+		outputString += "<a class='btn btn-large " + button.class + "' href='"+button.link+"' data-type='"+button.type+"'><i class='"+button.icon+"'></i> " + button.label + "</a>";
 	}
 	outputString += "</div>"
 	return new Handlebars.SafeString(outputString);

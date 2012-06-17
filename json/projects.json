@@ -5,18 +5,21 @@
 		"tagLine": "This is my submission for 2010 JS1K competition, which is about writing Javascript programs that fit in under 1k.",
 
 		"carousel": {
+			"id": "spiro-carousel",
 			"actionButtons": [
 				{
 					"label": "Open Demo",
 					"icon": "icon-play-circle icon-white",
-					"link": "/demos/spiro.html",
-					"class": "btn-success"
+					"link": "demos/spiro/spiro.html",
+					"class": "btn-success",
+					"type": "link"
 				},
 				{
 					"label": "View Source",
 					"icon": "icon-file icon-white",
-					"link": "/demos/spiro.js",
-					"class": "btn-primary"
+					"link": "demos/spiro/spiro.js",
+					"class": "btn-primary",
+					"type": "source"
 
 				}
 			],
@@ -50,13 +53,14 @@
 		"tagLine": "This was the fourth semester project at the Maastricht University. It was built in a team with two other programmers.",
 
 		"carousel": {
+			"id": "traffic-carousel",
 			"actionButtons": [
 				{
 					"label": "Download Source",
 					"icon": "icon-download icon-white",
 					"link": "download/traffic.zip",
-					"class": "btn-primary"
-
+					"class": "btn-primary",
+					"type": "download"
 				}
 			],
 			"items": [

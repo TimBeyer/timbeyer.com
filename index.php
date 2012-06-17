@@ -15,7 +15,7 @@
 
 
 </head>
-<body data-spy="scroll">
+<body>
 
 	<div class="container">
 		<header class="jumbotron masthead">
@@ -25,34 +25,8 @@
 
 		<div class="main-content">
 
-
-<!-- 			<section id="projects">
-				<div class="page-header">
-					<h1>Projects and code <a href="json/projects.json"><span class="label label-info">.json</span></a></h1>
-				</div>
-
-				<div class="row" id="projects-container" class="section-content">
-					<div class="span12">
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#spiro" data-toggle="tab">JS1k spiro</a></li>
-						</ul>
-
-								
-						<div class="tab-content">
-							<div class="tab-pane active" id="spiro">
-								
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</section>
-			 -->
-
-
 			<!-- Fallback for browsers with JS disabled -->
 			<noscript>
-
 				<div class="row" style="text-align: center">
 					<h2>To see more information, please enable Javascript and reload the page</h2>
 				</div>
@@ -82,18 +56,19 @@
 				</section>
 			</noscript>
 			<!-- End Fallback -->
+
 		</div>
 	</div>
 
 	<script type="text/x-handlebars-template" id="tabs-tmpl">
 		<ul class="nav nav-tabs">
 		{{#each tabs}}
-			<li {{#if active}}class="active"{{/if}}><a href="#{{id}}" data-toggle="tab">{{name}}</a></li>
+			<li {{#if active}}class="active"{{/if}}><a href="#{{id}}">{{name}}</a></li>
 		{{/each}}
 		</ul>		
 		<div class="tab-content">
 		{{#each tabs}}
-			<div class="tab-pane {{#if active}} active {{/if}} {{id}}" id=""></div>
+			<div class="tab-pane {{#if active}} active {{/if}} {{id}}" id="{{id}}"></div>
 		{{/each}}
 		</div>
 	</script>
@@ -142,7 +117,7 @@
 
 		{{#row}}
 			{{#span 12}}
-				{{carousel this.carousel "projects-carousel"}}
+				{{carousel this.carousel this.carousel.id}}
 			{{/span}}
 		{{/row}}
 		{{#row}}
@@ -156,6 +131,21 @@
 			{{/span}}
 		{{/row}}
 
+	</script>
+
+	<script type="text/x-handlebars-template" id="source-modal-tmpl">
+		<div class="modal hide fade" id="{{id}}">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal">×</button>
+		    <h3>Source</h3>
+		  </div>
+		  <div class="modal-body">
+		    <pre class="prettyprint">{{source}}</pre>
+		  </div>
+		  <div class="modal-footer">
+		    <a href="#" class="btn" data-dismiss="modal">Close</a>
+		  </div>
+		</div>
 	</script>
 
 	<!-- Load all scripts after content was rendered -->

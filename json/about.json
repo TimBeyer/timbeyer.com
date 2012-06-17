@@ -15,7 +15,7 @@
 
 	"technicalSkills": [
 		{"label": "Programming Languages", "items": ["Javascript","Python","PHP","Java"]},
-		{"label": "Technologies", "items": ["Backbone.js","Knockout.js","HTML5","LESS","Twitter Bootstrap"]}
+		{"label": "Technologies", "items": ["Backbone.js","Knockout.js","LESS","Twitter Bootstrap","Android"]}
 	]
 
 }

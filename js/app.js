@@ -26,10 +26,10 @@
 				},
 
 				render: function(){
-					// If there is a contentView element, only detach it before emptying the element
 					if(this.newContentViewAttached){
 						//this.$('.section-content').slideUp('slow');
 					}
+					// If there is a contentView element, only detach it before emptying the element
 					this.$('.section-content').detach();
 
 					this.$el.empty();
@@ -50,9 +50,7 @@
 							// Once the content is there, the scrollspy needs to refresh
 							$.when($cViewEl.slideDown('slow')).done(function(){
 								//console.log('Content slid out');
-								$('[data-spy="scroll"]').each(function () {
-								  	var $spy = $(this).scrollspy('refresh');
-								});
+								app.updateScrollspy();
 							});
 
 							this.newContentViewAttached = false;
@@ -88,6 +86,11 @@
 					if(this.contentData){
 						this.$el.append(this.template(this.contentData));
 					}
+
+					// If we have a carousel, activate it
+					this.$('.carousel').carousel({
+					  interval: 3000
+					});
 					return this;
 				},
 
@@ -115,12 +118,19 @@
 					this.navItems = [];
 					this.isFixed = false;
 					this.navTop = 0;
+
+					// Enable scrollspy
+					//this.$el.scrollspy();
+					// app.updateScrollspy = _.bind(function(){
+					// 	this.$el.scrollspy('refresh');
+					// }, this);
 				},
 
 				render: function(){
 					this.$el.empty();
 					this.$el.append(this.template({ navItems: this.navItems }));
 
+					//this.$el.scrollspy('refresh');
 					return this;
 				},
 
@@ -141,22 +151,19 @@
 			    		this.isFixed = true;
 			    		$nav.addClass('subnav-fixed');
 
-			    		$('[data-spy="scroll"]').each(function () {
-						  var $spy = $(this).scrollspy('refresh');
-						});
+			    		//app.updateScrollspy();
 
 			    	} else if (scrollTop <= navTop && this.isFixed) {
 			    		this.isFixed = false;
 			    		$nav.removeClass('subnav-fixed');
 
-			    		$('[data-spy="scroll"]').each(function () {
-						  var $spy = $(this).scrollspy('refresh');
-						});
+			    		//app.updateScrollspy();
 
 			    	}
 				},
 
 				smoothScrollToAnchor: function(e){
+					//console.log("Scroll")
 					var subnavHeight = 38;
 				    var subnavMarginBottom = 40;
 
@@ -183,43 +190,135 @@
 
 				tagName: 'div',
 
+				events: {
+					'click .nav a': 'selectTab',
+					'shown a': 'tabShown'
+				},
+
 				initialize: function(init){
 					this.template = Handlebars.compile($('#tabs-tmpl').html());
 					this.tabs = [];
 				},
 
 				render: function(){
+					console.log('Render TabsView');
 					// Detach all views first so they don't lose their event bindings
-					_.each(this.tabs, function(tab){
-						tab.view.$el.detach();
-					}, this)
+					// _.each(this.tabs, function(tab){
+					// 	tab.view.$el.detach();
+					// }, this)
 
+					console.log(this.$('.tab-pane').children());
+					this.$('.tab-pane').children().detach();
 					// Clear element and render new skeleton
 					this.$el.empty();
 					this.$el.append(this.template({tabs: this.tabs}));
 
 					// Insert all views in the right tab pane
 					_.each(this.tabs, function(tab){
-						this.$('div.' + tab.id).append(tab.view.render().el);
+						this.$('#' + tab.id).append(tab.view.render().el);
 					},this);
+
+					//this.$('.nav a').first().click();
 
 					return this;
 				},
 
 				addTab: function(tab){
-					// Add a unique id and make tab active if it's the first one
-					var isFirst = this.tabs.length === 0;
-					var internalTab = _.extend({ 'id': _.uniqueId('tab_'), 'active': isFirst}, tab);
+					// Add a unique id
+					var internalTab = _.extend({ 'id': _.uniqueId('tab_'), 'active': this.tabs.length === 0}, tab);
 
 					this.tabs.push(internalTab);
 					this.render();
 
 					return internalTab;
+				},
+
+				selectTab: function(e){
+					e.preventDefault();
+					console.log(e);
+					$(e.currentTarget).tab('show');
+
+					//
+				},
+
+				tabShown: function(e){
+					console.log("Tab shown, update scrollSpy");
+					app.updateScrollspy();
 				}
 
+			}),
+
+			ProjectView: Backbone.View.extend({
+				tagName: 'div',
+
+				events: {
+					'click .carousel-action-buttons a': 'clickActionButton'
+				},
+
+				initialize: function(init){
+					this.contentData = init.contentData || {};
+					this.template = Handlebars.compile($('#project-tmpl').html());
+				},
+
+				render: function(){
+					this.$el.empty();
+
+					this.$el.append(this.template(this.contentData));
+					
+
+					// If we have a carousel, activate it
+					this.$('.carousel').carousel({
+					  interval: 3000
+					});
+
+					return this;
+				},
+
+				clickActionButton: function(e){
+					var $target = $(e.currentTarget);
+					console.log('clickActionButton', e, $target);
+
+					// In case this is a download link,
+					// use the default action
+					var type = $target.data('type');
+					if(type !== 'download'){
+						e.preventDefault();
+						switch(type){
+							case 'link':
+								// Open the link in a modal
+								break;
+							case 'source':
+								// Open the source in a modal
+								var sourceLink = $target.attr('href');
+								console.log("sourceLink", sourceLink);
+
+								$.ajax({
+									url: sourceLink,
+									dataType: 'text',
+									success: function(source){
+										console.log('src', source);
+										var srcModalTemplate = Handlebars.compile($('#source-modal-tmpl').html());
+										var $srcModal = $(srcModalTemplate({id: _.uniqueId('src-modal-'), source: source }));
+										$('body').append($srcModal);
+										prettyPrint();
+										$srcModal.modal();
+										$srcModal.on('hidden', function(){
+											$srcModal.remove();
+										});
+									}
+								});
+
+								break;
+						}
+					}
+				}
 			})
+		},
 
-
+		updateScrollspy: function(){
+			$('[data-spy="scroll"]').each(function () {
+			  	var $spy = $(this).scrollspy('refresh');
+			});		
 		}
 	};
 
@@ -292,48 +391,28 @@
 			className: 'span12'
 		});
 
-		var projectView = new app.views.SectionContentView({
-			template: Handlebars.compile($('#project-tmpl').html())
+		var spiroView = new app.views.ProjectView({
+			contentData: data.projects[0]
 		});
-		projectView.setContentData(data.projects[0]);
 
 		projectTabsView.addTab({
 			name: 'Spiro JS1k',
-			view: projectView
+			view: spiroView
+		});
+
+
+		var trafficView = new app.views.ProjectView({
+			contentData: data.projects[1]
+		});
+
+		projectTabsView.addTab({
+			name: 'Traffic Sim',
+			view: trafficView
 		});
 
 		projectSection.setContentView(projectTabsView);
 
-		//var projectTabPaneTemplate = Handlebars.compile($('#project-tab-pane-tmpl').html());
-
-		//var projectTabPane = $(projectTabPaneTemplate(data.projects[0]) + projectTabPaneTemplate(data.projects[1]));
-		
-		//projectTabPane.hide();
-		//aboutPage.hide();
-
-		$('.carousel').carousel({
-		  interval: 3000
-		});
-
-		//$('#about-container').empty();
-		//$('#about-container').append(aboutPage);
-
-		//$('#spiro').append(projectTabPane);
-		
-/*		$.when(aboutPage.slideDown('slow')).done(function(){
-			console.log('about is down');
-			$.when(projectTabPane.slideDown('slow')).done(function(){
-
-				$('[data-spy="scroll"]').each(function () {
-				  var $spy = $(this).scrollspy('refresh');
-				});
-
-
-
-			});
-			
-		})
-*/
+		app.updateScrollspy();
 
 
 	})
