@@ -271,7 +271,7 @@
 
 					// If we have a carousel, activate it
 					this.$('.carousel').carousel({
-					  interval: 3000
+					  interval: 4000
 					});
 					this.$('.carousel').carousel('pause');
 
@@ -337,12 +337,6 @@
 	};
 
 
-	var loadSpinner = $('<img src="img/spinner.gif" class="spinner centered"></img>');
-
-	$.when(domReady).then(function(){
-		$('.main-content').append(loadSpinner);
-	});
-
 	// Resolve domReady Deferred on domReady
 	$(domReady.resolve);
 
@@ -358,13 +352,20 @@
 
 	$.when(domReady, dataLoaded).then(function(){
 		console.log("App starting");
-		loadSpinner.hide();
+
+		/* 
+			First prepare all views and add them to the dom
+			Then upon completion, fade in the sections one by one
+		*/
+
 		/*
 			Render navigation
 		*/
 		var subnav = new app.views.NavbarView();
-		$('.main-content').append(subnav.render().el);
-		subnav.startScrollHandling();
+		var $subnavEl = $(subnav.render().el);
+		$subnavEl.hide();
+		$('.main-content').append($subnavEl);
+
 		/* 
 			Render about View
 		*/
@@ -382,7 +383,11 @@
 		});
 
 		aboutView.setContentData(data.about);
-		$('.main-content').append(aboutSection.render().el);
+
+		var $aboutSectionEl = $(aboutSection.render().el);
+		$aboutSectionEl.hide();
+
+		$('.main-content').append($aboutSectionEl);
 		aboutSection.setContentView(aboutView);
 
 		// Add section to navigation
@@ -401,7 +406,9 @@
 			}
 		});
 
-		$('.main-content').append(projectSection.render().el);
+		var $projectSectionEl = $(projectSection.render().el);
+		$projectSectionEl.hide();
+		$('.main-content').append($projectSectionEl);
 
 		// Add section to navigation
 		subnav.addSection(projectSection);
@@ -430,6 +437,30 @@
 		});
 
 		projectSection.setContentView(projectTabsView);
+
+
+		/*
+			Fade in all the elements
+		*/
+
+		// When the spinner disappears too fast, it looks bad
+		// Add an artificial wait time so it looks better
+		var additionalWait = 500;
+		_.delay(function(){
+			var fadeInDebounce = 100;
+			$('#main-spinner').fadeOut('fast', _.debounce(function(){
+				$subnavEl.fadeIn(function(){
+					subnav.startScrollHandling();
+					$aboutSectionEl.slideDown(function(){
+						$projectSectionEl.slideDown();
+						
+					});	
+				});
+			},fadeInDebounce));
+		}, additionalWait);
+
+
+	
 
 		app.updateScrollspy();
 

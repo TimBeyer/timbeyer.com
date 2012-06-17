@@ -25,6 +25,11 @@
 
 		<div class="main-content">
 
+			<script>
+				//If we have scripting we'll want to add a spinner right now to make the site seem more responsive
+				document.write('<img src="img/spinner-36.gif" class="spinner centered" id="main-spinner"></img>');
+			</script>
+
 			<!-- Fallback for browsers with JS disabled -->
 			<noscript>
 				<div class="row" style="text-align: center">

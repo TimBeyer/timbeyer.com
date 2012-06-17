@@ -43,6 +43,7 @@
 		"facts": [
 			{"label": "Language", "items": ["Javascript"]},
 			{"label": "Size", "items": ["1022 bytes"]},
+			{"label": "Technologies", "items": ["Canvas"]},
 			{"label": "Link", "items": [{"link": "http://js1k.com/2010-first/demo/281", "label": "http://js1k.com/2010-first/demo/281"}]}
 		]
 	},
@@ -97,9 +98,10 @@
 			]
 		},
 
-		"description": "Microscopic Traffic Simulation using the Intelligent Driver Model\nThe application is entirely written in python using PyGame for the drawing and numpy for several calculations.\n\nI contributed simulation code and worked on data visualization together with writing the UI toolkit.\nAdditionally I wrote a map editor running in the browser which exports maps in a JSON format to be imported into the simulation.",
+		"description": "Microscopic Traffic Simulation using the Intelligent Driver Model\nHas 4 different traffic light control strategies that try to optimize throughput.\nThe application is entirely written in python using PyGame for the drawing and numpy for several calculations.\n\nI contributed simulation code and worked on data visualization together with writing the UI toolkit.\nAdditionally I wrote a map editor running in the browser which exports maps in a JSON format to be imported into the simulation.",
 		"facts": [
 			{"label": "Language", "items": ["Python"]},
+			{"label": "Technologies", "items": ["PyGame","Numpy"]},
 			{"label": "Team Size", "items": ["3 programmers"]},
 			{"label": "Project Duration", "items": ["6 months"]},
 			{"label": "LOC", "items": ["3647"]}

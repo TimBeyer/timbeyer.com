@@ -108,7 +108,7 @@ Handlebars.registerHelper("carousel", function(carousel, id) {
 
 	// Control Arrows
 	outputString += "<a class='carousel-control left' href='#"+id+"' data-slide='prev'>&lsaquo;</a>";
-	outputString += "<a class='carousel-control right' href='#"+id+"' data-slide='prev'>&rsaquo;</a>";
+	outputString += "<a class='carousel-control right' href='#"+id+"' data-slide='next'>&rsaquo;</a>";
 
 	outputString += "</div>"
 	return new Handlebars.SafeString(outputString);
