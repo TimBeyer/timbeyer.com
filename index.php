@@ -27,12 +27,13 @@
 
 			<script>
 				//If we have scripting we'll want to add a spinner right now to make the site seem more responsive
+				//I know document.write is ugly and should never be used but this is one of those cases where it's ok
 				document.write('<img src="img/spinner-36.gif" class="spinner centered" id="main-spinner"></img>');
 			</script>
 
 			<!-- Fallback for browsers with JS disabled -->
 			<noscript>
-				<div class="row" style="text-align: center">
+				<div class="row" style="text-align: center; margin-bottom: 60px;">
 					<h2>To see more information, please enable Javascript and reload the page</h2>
 				</div>
 				<section id="about">	

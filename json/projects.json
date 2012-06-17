@@ -1,52 +1,4 @@
 [
-	{
-		"name": "Spirograph",
-		"tabName": "JS1K Spiro",
-		"tagLine": "This is my submission for 2010 JS1K competition, which is about writing Javascript programs that fit in under 1k.",
-
-		"carousel": {
-			"id": "spiro-carousel",
-			"actionButtons": [
-				{
-					"label": "Open Demo",
-					"icon": "icon-play-circle icon-white",
-					"link": "demos/spiro/spiro.html",
-					"class": "btn-success",
-					"type": "link"
-				},
-				{
-					"label": "View Source",
-					"icon": "icon-file icon-white",
-					"link": "demos/spiro/spiro.js",
-					"class": "btn-primary",
-					"type": "source"
-
-				}
-			],
-			"items": [
-				{
-					"image": "img/spiro/spiro5-1170.png"
-				},
-				{
-					"image": "img/spiro/spiro3-1170.png"
-				},
-				{
-					"image": "img/spiro/spiro6-1170.png"
-				},
-				{
-					"image": "img/spiro/spiro4-1170.png"
-				}
-			]
-		},
-
-		"description": "Creates random animated Spirograph patterns\nLeft click to add another random pattern on top\nPress \"C\" to toggle colors\nPress \"F\" to toggle fade effect\nPress \"P\" to pause\nPress \"Space\" to reset\nPress \"S\" to save the picture",
-		"facts": [
-			{"label": "Language", "items": ["Javascript"]},
-			{"label": "Size", "items": ["1022 bytes"]},
-			{"label": "Technologies", "items": ["Canvas"]},
-			{"label": "Link", "items": [{"link": "http://js1k.com/2010-first/demo/281", "label": "http://js1k.com/2010-first/demo/281"}]}
-		]
-	},
 
 	{
 		"name": "Traffic Sim",
@@ -105,6 +57,54 @@
 			{"label": "Team Size", "items": ["3 programmers"]},
 			{"label": "Project Duration", "items": ["6 months"]},
 			{"label": "LOC", "items": ["3647"]}
+		]
+	},
+	{
+		"name": "Spirograph",
+		"tabName": "JS1K Spiro",
+		"tagLine": "This is my submission for 2010 JS1K competition, which is about writing Javascript programs that fit in under 1k.",
+
+		"carousel": {
+			"id": "spiro-carousel",
+			"actionButtons": [
+				{
+					"label": "Open Demo",
+					"icon": "icon-play-circle icon-white",
+					"link": "demos/spiro/spiro.html",
+					"class": "btn-success",
+					"type": "link"
+				},
+				{
+					"label": "View Source",
+					"icon": "icon-file icon-white",
+					"link": "demos/spiro/spiro.js",
+					"class": "btn-primary",
+					"type": "source"
+
+				}
+			],
+			"items": [
+				{
+					"image": "img/spiro/spiro5-1170.png"
+				},
+				{
+					"image": "img/spiro/spiro3-1170.png"
+				},
+				{
+					"image": "img/spiro/spiro6-1170.png"
+				},
+				{
+					"image": "img/spiro/spiro4-1170.png"
+				}
+			]
+		},
+
+		"description": "Creates random animated Spirograph patterns\nLeft click to add another random pattern on top\nPress \"C\" to toggle colors\nPress \"F\" to toggle fade effect\nPress \"P\" to pause\nPress \"Space\" to reset\nPress \"S\" to save the picture",
+		"facts": [
+			{"label": "Language", "items": ["Javascript"]},
+			{"label": "Size", "items": ["1022 bytes"]},
+			{"label": "Technologies", "items": ["Canvas"]},
+			{"label": "Link", "items": [{"link": "http://js1k.com/2010-first/demo/281", "label": "http://js1k.com/2010-first/demo/281"}]}
 		]
 	}
 

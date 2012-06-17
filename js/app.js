@@ -20,8 +20,6 @@
 					this.contentData = init.contentData;
 					this.shortTitle = init.shortTitle;
 
-					this.newContentViewAttached = false;
-
 					_.bindAll(this,"render");
 				},
 
@@ -40,24 +38,7 @@
 						this.$('.spinner').remove();
 						var $cViewEl = this.contentView.render().$el;
 
-						/*
-							Take care of sliding the contentView in when it's a new one
-						*/
-						if(this.newContentViewAttached){
-							$cViewEl.hide();
-							this.$('.section-content').append(this.contentView.render().el);
-
-							// Once the content is there, the scrollspy needs to refresh
-							$.when($cViewEl.slideDown('slow')).done(function(){
-								//console.log('Content slid out');
-								app.updateScrollspy();
-							});
-
-							this.newContentViewAttached = false;
-						}
-						else{
-							this.$('.section-content').append(this.contentView.render().el);
-						}
+						this.$('.section-content').append(this.contentView.render().el);						
 					}
 
 					return this;
@@ -65,7 +46,6 @@
 
 				setContentView: function(view){
 					this.contentView = view;
-					this.newContentViewAttached = true;
 					this.render();
 				}
 			}),
@@ -119,6 +99,7 @@
 					this.isFixed = false;
 					this.navTop = 0;
 
+					this.placeholder = $('<div class="subnav-placeholder"></div>');
 					// Enable scrollspy
 					//this.$el.scrollspy();
 					// app.updateScrollspy = _.bind(function(){
@@ -153,13 +134,14 @@
 			    	if (scrollTop >= navTop && !this.isFixed) {
 			    		this.isFixed = true;
 			    		$nav.addClass('subnav-fixed');
+			    		$('.main-content').prepend(this.placeholder);
 
 			    		//app.updateScrollspy();
 
 			    	} else if (scrollTop <= navTop && this.isFixed) {
 			    		this.isFixed = false;
 			    		$nav.removeClass('subnav-fixed');
-
+			    		this.placeholder.detach();
 			    		//app.updateScrollspy();
 
 			    	}
@@ -172,7 +154,7 @@
 
 					var targetAnchor = $($(e.target).attr('href'));
 
-					var addOffset = (this.isFixed ? - subnavHeight :  - ( 2*subnavHeight + subnavMarginBottom));
+					var addOffset = 0;//(this.isFixed ? - subnavHeight :  - ( 2*subnavHeight + subnavMarginBottom));
 					$('html,body').animate({scrollTop: $(targetAnchor).offset().top + addOffset}, 500, this.processScroll);
 					e.preventDefault();		
 				},
@@ -421,7 +403,7 @@
 		});
 
 		var spiroView = new app.views.ProjectView({
-			contentData: data.projects[0]
+			contentData: data.projects[1]
 		});
 
 		projectTabsView.addTab({
@@ -431,7 +413,7 @@
 
 
 		var trafficView = new app.views.ProjectView({
-			contentData: data.projects[1]
+			contentData: data.projects[0]
 		});
 
 		projectTabsView.addTab({
@@ -450,7 +432,7 @@
 		// Add an artificial wait time so it looks better
 		var additionalWait = 500;
 		_.delay(function(){
-			var fadeInDebounce = 100;
+			var fadeInDebounce = 0;
 			$('#main-spinner').fadeOut('fast', _.debounce(function(){
 				$subnavEl.fadeIn(function(){
 					subnav.startScrollHandling();
