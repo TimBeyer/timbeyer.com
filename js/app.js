@@ -154,7 +154,8 @@
 
 					var targetAnchor = $($(e.target).attr('href'));
 
-					var addOffset = 0;//(this.isFixed ? - subnavHeight :  - ( 2*subnavHeight + subnavMarginBottom));
+					//var addOffset = 0;//(this.isFixed ? - subnavHeight :  - ( 2*subnavHeight + subnavMarginBottom));
+					var addOffset =  -subnavHeight;
 					$('html,body').animate({scrollTop: $(targetAnchor).offset().top + addOffset}, 500, this.processScroll);
 					e.preventDefault();		
 				},
@@ -166,7 +167,7 @@
 				startScrollHandling: function(){
 					this.navTop = this.$el.length && this.$el.offset().top;
 				    this.processScroll()
-				    $(window).on('scroll', _.throttle(this.processScroll,100));
+				    $(window).on('scroll', _.throttle(this.processScroll,50));
 				}
 
 			}),
