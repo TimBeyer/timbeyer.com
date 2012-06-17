@@ -236,6 +236,7 @@
 				selectTab: function(e){
 					e.preventDefault();
 					console.log(e);
+					this.$('.tab-pane.active .carousel').carousel('pause');
 					$(e.currentTarget).tab('show');
 
 					//
@@ -244,6 +245,8 @@
 				tabShown: function(e){
 					console.log("Tab shown, update scrollSpy");
 					app.updateScrollspy();
+					this.$('.tab-pane.active .carousel').carousel('cycle');
+
 				}
 
 			}),
@@ -270,6 +273,7 @@
 					this.$('.carousel').carousel({
 					  interval: 3000
 					});
+					this.$('.carousel').carousel('pause');
 
 					return this;
 				},
@@ -289,7 +293,7 @@
 								var source = $target.attr('href');
 
 								var iframeModalTemplate = Handlebars.compile($('#iframe-modal-tmpl').html());
-								var $iframeModal = $(iframeModalTemplate({id: _.uniqueId('iframe-modal-'), source: source , name: this.contentData.name}));
+								var $iframeModal = $(iframeModalTemplate({id: _.uniqueId('iframe-modal-'), source: source, name: this.contentData.name}));
 								$('body').append($iframeModal);
 								prettyPrint();
 								$iframeModal.modal();
@@ -333,6 +337,11 @@
 	};
 
 
+	var loadSpinner = $('<img src="img/spinner.gif" class="spinner centered"></img>');
+
+	$.when(domReady).then(function(){
+		$('.main-content').append(loadSpinner);
+	});
 
 	// Resolve domReady Deferred on domReady
 	$(domReady.resolve);
@@ -349,7 +358,7 @@
 
 	$.when(domReady, dataLoaded).then(function(){
 		console.log("App starting");
-
+		loadSpinner.hide();
 		/*
 			Render navigation
 		*/
