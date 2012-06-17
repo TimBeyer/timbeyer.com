@@ -146,6 +146,9 @@
 				    , $nav = this.$el
 				    , navTop = this.navTop
 
+
+				    // Add placeholder logic here
+
 					var i, scrollTop = $win.scrollTop()
 			    	if (scrollTop >= navTop && !this.isFixed) {
 			    		this.isFixed = true;
@@ -179,7 +182,7 @@
 				 	After this the navbar position can no longer be changed
 				*/
 				startScrollHandling: function(){
-					this.navTop = this.$el.length && this.$el.offset().top - 40;
+					this.navTop = this.$el.length && this.$el.offset().top;
 				    this.processScroll()
 				    $(window).on('scroll', _.throttle(this.processScroll,100));
 				}
@@ -451,8 +454,8 @@
 			$('#main-spinner').fadeOut('fast', _.debounce(function(){
 				$subnavEl.fadeIn(function(){
 					subnav.startScrollHandling();
-					$aboutSectionEl.slideDown(function(){
-						$projectSectionEl.slideDown();
+					$aboutSectionEl.slideDown('slow',function(){
+						$projectSectionEl.slideDown('slow');
 						
 					});	
 				});
