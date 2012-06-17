@@ -32,7 +32,7 @@ body{
 			right: 20px; 
 			bottom: 20px;
 
-			z-index: 1100; 
+			z-index: 1001; 
 		}
 		
 		.item{
@@ -42,6 +42,33 @@ body{
 		}
 	}
 }
+
+@modal-max-height: 600px;
+@modal-large-width: 940px;
+@modal-very-large-width: 1170px;
+
+.modal-body {
+  max-height: @modal-max-height;
+}
+
+.modal{
+	margin-top: -@modal-max-height / 2 - 50;
+}
+@media (min-width: 980px) {
+
+	.modal.large{
+		width: @modal-large-width;
+		margin-left: -@modal-large-width / 2;
+	}
+}
+
+@media(min-width: 1200px) {
+	.modal.large{
+		width: @modal-very-large-width;
+		margin-left: -@modal-very-large-width / 2;
+	}
+}
+
 
 /* Jumbotrons
 -------------------------------------------------- */

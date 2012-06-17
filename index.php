@@ -134,13 +134,28 @@
 	</script>
 
 	<script type="text/x-handlebars-template" id="source-modal-tmpl">
-		<div class="modal hide fade" id="{{id}}">
+		<div class="modal large hide fade" id="{{id}}">
 		  <div class="modal-header">
 		    <button type="button" class="close" data-dismiss="modal">×</button>
 		    <h3>Source</h3>
 		  </div>
 		  <div class="modal-body">
 		    <pre class="prettyprint">{{source}}</pre>
+		  </div>
+		  <div class="modal-footer">
+		    <a href="#" class="btn" data-dismiss="modal">Close</a>
+		  </div>
+		</div>
+	</script>
+
+	<script type="text/x-handlebars-template" id="iframe-modal-tmpl">
+		<div class="modal large hide fade" id="{{id}}">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal">×</button>
+		    <h3>{{name}}</h3>
+		  </div>
+		  <div class="modal-body">
+		    <iframe src="{{source}}" width="100%" height="550px" seamless="seamless" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 		  </div>
 		  <div class="modal-footer">
 		    <a href="#" class="btn" data-dismiss="modal">Close</a>

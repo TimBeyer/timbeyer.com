@@ -286,6 +286,16 @@
 						switch(type){
 							case 'link':
 								// Open the link in a modal
+								var source = $target.attr('href');
+
+								var iframeModalTemplate = Handlebars.compile($('#iframe-modal-tmpl').html());
+								var $iframeModal = $(iframeModalTemplate({id: _.uniqueId('iframe-modal-'), source: source , name: this.contentData.name}));
+								$('body').append($iframeModal);
+								prettyPrint();
+								$iframeModal.modal();
+								$iframeModal.on('hidden', function(){
+									$iframeModal.remove();
+								});								
 								break;
 							case 'source':
 								// Open the source in a modal
