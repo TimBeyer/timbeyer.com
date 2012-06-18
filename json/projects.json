@@ -1,6 +1,6 @@
-[
+{
 
-	{
+	"traffic": {
 		"name": "Traffic Sim",
 		"tabName": "Traffic",
 		"tagLine": "This was the fourth semester project at the Maastricht University. It was built in a team with two other programmers.",
@@ -59,7 +59,44 @@
 			{"label": "LOC", "items": ["3647"]}
 		]
 	},
-	{
+
+	"booking": {
+		"name": "Booking App",
+		"tabName": "Booking",
+		"tagLine": "This booking interface was built for a spa in the Netherlands.",
+
+		"carousel": {
+			"id": "spiro-carousel",
+			"actionButtons": [
+				
+			],
+			"items": [
+				{
+					"image": "img/booking/1170x390/booking-4-1170x390.png"
+				},
+				{
+					"image": "img/booking/1170x390/booking-5-dependency-tracking-1170x390.png"
+				},
+				{
+					"image": "img/booking/1170x390/booking-7-customer-data-filled-in-1170x390.png"
+				},
+				{
+					"image": "img/booking/1170x390/booking-9-review-1170x390.png"
+				},
+				{
+					"image": "img/booking/1170x390/booking-10-review-1170x390.png"
+				}
+			]
+		},
+
+		"description": "Creates random animated Spirograph patterns\nLeft click to add another random pattern on top\nPress \"C\" to toggle colors\nPress \"F\" to toggle fade effect\nPress \"P\" to pause\nPress \"Space\" to reset\nPress \"S\" to save the picture",
+		"facts": [
+			{"label": "Language", "items": ["Javascript (client)","PHP (server)"]},
+			{"label": "Technologies", "items": ["JSON","Backbone.js","Underscore.js","Handlebars","Require.js","LESS","Bootstrap"]}
+		]
+	},
+
+	"spiro": {
 		"name": "Spirograph",
 		"tabName": "JS1K Spiro",
 		"tagLine": "This is my submission for 2010 JS1K competition, which is about writing Javascript programs that fit in under 1k.",
@@ -108,4 +145,4 @@
 		]
 	}
 
-]
+}

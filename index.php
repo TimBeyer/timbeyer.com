@@ -204,7 +204,8 @@
 
 	<script src="js/handlebars-1.0.0.beta.6.js"></script>
 	<script src="js/handlebars-helpers.js"></script>
-
+	
+	<script src="js/app-lib.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
