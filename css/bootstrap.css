@@ -820,7 +820,7 @@ a.thumbnail:hover{border-color:#0088cc;-webkit-box-shadow:0 1px 4px rgba(0, 105,
 .main-content>section{padding-bottom:40px;}
 .page-header{margin-top:0px;margin-bottom:18px;}
 .carousel.project-carousel .carousel-action-buttons{position:absolute;right:20px;bottom:20px;z-index:1001;}
-.carousel.project-carousel .carousel-inner .item .carousel-caption{margin-right:280px;}
+.carousel.project-carousel .carousel-inner .item .carousel-caption{padding-right:280px;min-height:60px;}
 .modal-body{max-height:600px;}
 .modal{margin-top:-350px;}
 @media (min-width:980px){.modal.large{width:940px;margin-left:-470px;}}@media (min-width:1200px){.modal.large{width:1170px;margin-left:-585px;}}.jumbotron{position:relative;}.jumbotron h1{margin-bottom:9px;font-size:81px;font-weight:bold;letter-spacing:-1px;line-height:1;}

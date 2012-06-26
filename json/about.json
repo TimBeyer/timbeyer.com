@@ -10,7 +10,7 @@
 		{"label": "Age", "items": ["24"]},
 		{"label": "Nationality", "items": ["German"]},
 		{"label": "Hometown", "items": ["Kiel"]},
-		{"label": "Spoken Languages", "items": ["German","English","French","Dutch"]}
+		{"label": "Languages", "items": ["German","English","French","Dutch"]}
 	],
 
 	"technicalSkills": [

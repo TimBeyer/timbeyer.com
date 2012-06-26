@@ -60,10 +60,81 @@
 		]
 	},
 
+	"snooker": {
+		"name": "UM Snooker",
+		"tabName": "Snooker",
+		"tagLine": "A snooker simulation with AI developed in a team of three for the second semester project at the Maastricht University",
+
+		"carousel": {
+			"id": "snooker-carousel",
+			"actionButtons": [
+				{
+					"label": "Download",
+					"icon": "icon-download icon-white",
+					"link": "http://code.google.com/p/umsnooker/downloads/list",
+					"class": "btn-success",
+					"type": "link"
+				},
+				{
+					"label": "Open repository",
+					"icon": "icon-file icon-white",
+					"link": "http://code.google.com/p/umsnooker/",
+					"class": "btn-primary",
+					"type": "link"
+				}
+			],
+			"items": [
+				{
+					"image": "img/snooker/aim_phase-1170x300.png",
+					"caption": {
+						"heading": "Full control",
+						"content": "Change force, cue angle and point of impact."
+					}
+				},
+				{
+					"image": "img/snooker/aim_phase_multilines-1170x300.png",
+					"caption": {
+						"heading": "Shot previews",
+						"content": "Watch live how your shot will influence the game."
+					}
+				},
+				{
+					"image": "img/snooker/shot_preview_multibounce-1170x300.png",
+					"caption": {
+						"heading": "Advanced physics",
+						"content": "Sliding, spinning, deflection, friction - everything is implemented."
+					}
+				},
+				{
+					"image": "img/snooker/ai_planning-1170x300.png",
+					"caption": {
+						"heading": "Watch the AI",
+						"content": "See what the AI is thinking. All planning is shown live."
+					}
+				},
+				{
+					"image": "img/snooker/indicators-1170x300.png",
+					"caption": {
+						"heading": "Visual assistance",
+						"content": "With indicators for the currently active balls"
+					}
+				}
+			]
+		},
+
+		"description": "",
+		"facts": [
+			{"label": "Language", "items": ["Java"]},
+			{"label": "Technologies", "items": ["jMonkey Engine"]},
+			{"label": "Team Size", "items": ["3 programmers"]},
+			{"label": "Project Duration", "items": ["6 months"]}
+		]
+	},
+
 	"booking": {
 		"name": "Booking App",
 		"tabName": "Booking",
-		"tagLine": "This booking interface was built for a spa in the Netherlands.",
+		"tagLine": "A dynamic, api-driven booking interface with dependency tracking and automatic surcharge handling.",
 
 		"carousel": {
 			"id": "spiro-carousel",
@@ -72,27 +143,112 @@
 			],
 			"items": [
 				{
-					"image": "img/booking/1170x390/booking-4-1170x390.png"
+					"image": "img/booking/1170x390/booking-4-1170x390.png",
+					"caption": {
+						"heading": "Fully dynamic shopping cart",
+						"content": "Your shopping cart is always up to date without any delays or page refreshes."
+					}
 				},
 				{
-					"image": "img/booking/1170x390/booking-5-dependency-tracking-1170x390.png"
+					"image": "img/booking/1170x390/booking-5-dependency-tracking-1170x390.png",
+					"caption": {
+						"heading": "Dependency Tracking",
+						"content": "Product dependencies and special offers are always tracked and applied automatically."
+					}
 				},
 				{
-					"image": "img/booking/1170x390/booking-7-customer-data-filled-in-1170x390.png"
+					"image": "img/booking/1170x390/booking-9-review-1170x390.png",
+					"caption": {
+						"heading": "Simplicity is key",
+						"content": "Show exactly what the user wants and needs to know."
+					}
 				},
+
 				{
-					"image": "img/booking/1170x390/booking-9-review-1170x390.png"
-				},
-				{
-					"image": "img/booking/1170x390/booking-10-review-1170x390.png"
+					"image": "img/booking/1170x390/booking-10-review-1170x390.png",
+					"caption": {
+						"heading": "Dynamic surcharge and rebate handling",
+						"content": "Add surcharges and rebates that depend on several booking factors without touching the code. Everything is dynamic and api-driven."
+					}
 				}
 			]
 		},
 
-		"description": "Creates random animated Spirograph patterns\nLeft click to add another random pattern on top\nPress \"C\" to toggle colors\nPress \"F\" to toggle fade effect\nPress \"P\" to pause\nPress \"Space\" to reset\nPress \"S\" to save the picture",
+		"description": "",
 		"facts": [
 			{"label": "Language", "items": ["Javascript (client)","PHP (server)"]},
-			{"label": "Technologies", "items": ["JSON","Backbone.js","Underscore.js","Handlebars","Require.js","LESS","Bootstrap"]}
+			{"label": "Technologies", "items": ["JSON","Backbone.js","Underscore.js","Handlebars","Require.js","LESS","Bootstrap"]},
+			{"label": "LOC", "items":["3395"]}
+		]
+	},
+
+
+	"cavenav": {
+		"name": "Cavenav",
+		"tabName": "Cavenav",
+		"tagLine": "A virtual map created together with <a href='http://misera.org' target='blank'>Thomas Misera</a> to facilitate exploring the cave systems around Maastricht",
+
+		"carousel": {
+			"id": "cavenav-carousel",
+			"actionButtons": [
+				{
+					"label": "Download",
+					"icon": "icon-download icon-white",
+					"link": "http://code.google.com/p/umsnooker/downloads/list",
+					"class": "btn-success",
+					"type": "link"
+				},
+				{
+					"label": "Open repository",
+					"icon": "icon-file icon-white",
+					"link": "https://github.com/modemuser/CaveNav",
+					"class": "btn-primary",
+					"type": "link"
+				}
+			],
+			"items": [
+				{
+					"image": "img/cavenav/routing_2-1170x300.png",
+					"caption": {
+						"heading": "Compass supported map",
+						"content": "Always stays at the correct rotation. A separate compass is no longer required."
+					}
+				},
+				{
+					"image": "img/cavenav/raycaster-1170x300.png",
+					"caption": {
+						"heading": "Raycaster",
+						"content": "Gives you an impression what your surroundings should look like."
+					}
+				},	
+				{
+					"image": "img/cavenav/routing-1170x300.png",
+					"caption": {
+						"heading": "Routing",
+						"content": "Let your tablet plan your way. It's optimal."
+					}
+				},	
+				{
+					"image": "img/cavenav/modes-1170x300.png",
+					"caption": {
+						"heading": "4 Modes",
+						"content": "Look around, find the shortest path to your destionation, edit the graph and add points of interest."
+					}
+				},			
+				{
+					"image": "img/cavenav/options-1170x300.png",
+					"caption": {
+						"heading": "Flashlight included",
+						"content": "Helps walking safely in complete darkness"
+					}
+				}				
+			]
+		},
+
+		"description": "",
+		"facts": [
+			{"label": "Language", "items": ["Java"]},
+			{"label": "Technologies", "items": ["Android","JSON"]}
 		]
 	},
 
@@ -109,14 +265,14 @@
 					"icon": "icon-play-circle icon-white",
 					"link": "demos/spiro/spiro.html",
 					"class": "btn-success",
-					"type": "link"
+					"type": "link-modal"
 				},
 				{
 					"label": "View Source",
 					"icon": "icon-file icon-white",
 					"link": "demos/spiro/spiro.js",
 					"class": "btn-primary",
-					"type": "source"
+					"type": "source-modal"
 
 				}
 			],

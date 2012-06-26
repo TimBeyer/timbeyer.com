@@ -197,8 +197,7 @@
 				},
 
 				addTab: function(tab){
-					// Add a unique id
-					var internalTab = _.extend({ 'id': _.uniqueId('tab_'), 'active': this.tabs.length === 0}, tab);
+					var internalTab = _.extend({ 'active': this.tabs.length === 0}, tab);
 
 					this.tabs.push(internalTab);
 					this.render();
@@ -260,10 +259,11 @@
 					// In case this is a download link,
 					// use the default action
 					var type = $target.data('type');
-					if(type !== 'download'){
+					if(type !== 'download' && type !== 'link'){
 						e.preventDefault();
 						switch(type){
-							case 'link':
+
+							case 'link-modal':
 								// Open the link in a modal
 								var source = $target.attr('href');
 
@@ -276,7 +276,7 @@
 									$iframeModal.remove();
 								});								
 								break;
-							case 'source':
+							case 'source-modal':
 								// Open the source in a modal
 								var sourceLink = $target.attr('href');
 
@@ -338,6 +338,7 @@
 					_.each(this.projects, function(project, projectId){
 						this.tabsView.addTab({
 							name: project.tabName,
+							id: "tab_" + projectId,
 							view: this.projectViews[projectId]
 						});
 					},this);

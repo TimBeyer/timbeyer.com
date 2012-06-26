@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	
-	<link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
+	<!-- <link rel="stylesheet/less" href="less/bootstrap.less" media="all" />
 	<script> less = {env:'development'};</script>
 	<script src="js/less-1.3.0.min.js"></script>
-
-	<!-- <link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link> -->
+ -->
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
 	<link rel="stylesheet" href="css/prettify.css" type="text/css"></link>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -51,7 +51,7 @@
 
 						<div class="span3">
 							<h2>Personal Facts</h2>
-							<dl><dt>Age</dt><dd>24</dd><dt>Nationality</dt><dd>German</dd><dt>Hometown</dt><dd>Kiel</dd><dt>Spoken Languages</dt><dd>German</dd><dd>English</dd><dd>French</dd><dd>Dutch</dd></dl>
+							<dl><dt>Age</dt><dd>24</dd><dt>Nationality</dt><dd>German</dd><dt>Hometown</dt><dd>Kiel</dd><dt>Languages</dt><dd>German</dd><dd>English</dd><dd>French</dd><dd>Dutch</dd></dl>
 						</div>
 
 						<div class="span3">
@@ -119,7 +119,7 @@
 	<script type="text/x-handlebars-template" id="project-tmpl">
 
 		<h2>{{name}}</h2>
-		<p>{{tagLine}}</p>
+		<p>{{{tagLine}}}</p>
 
 		{{#row}}
 			{{#span 12}}
@@ -207,5 +207,19 @@
 	
 	<script src="js/app-lib.js"></script>
 	<script src="js/app.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-32847010-1']);
+	  _gaq.push(['_setDomainName', 'timbeyer.com']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
 </body>
 </html>
