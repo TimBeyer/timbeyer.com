@@ -130,7 +130,7 @@
 		{{#row}}
 			{{#span 9}}
 				<h3>Description</h3>
-				<pre>{{description}}</pre>
+				<pre class="description">{{description}}</pre>
 			{{/span}}
 			{{#span 3}}
 				<h3>Facts</h3>
