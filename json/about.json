@@ -10,12 +10,14 @@
 		{"label": "Age", "items": ["24"]},
 		{"label": "Nationality", "items": ["German"]},
 		{"label": "Hometown", "items": ["Kiel"]},
-		{"label": "Languages", "items": ["German","English","French","Dutch"]}
+		{"label": "Languages", "items": ["German","English","French"]},
+		{"label": "Interestes", "items": ["Javascript", "User Interfaces", "Real-time web apps"]}
 	],
 
 	"technicalSkills": [
 		{"label": "Programming Languages", "items": ["Javascript","Python","PHP","Java"]},
-		{"label": "Technologies", "items": ["Backbone.js","Knockout.js","LESS","Twitter Bootstrap","Android"]}
+		{"label": "Databases", "items": ["MySQL/SQLite", "Redis"]},
+		{"label": "Technologies", "items": ["Android", "Node.js", "Underscore.js", "Backbone.js","Knockout.js","LESS"]}
 	]
 
 }

@@ -33,17 +33,15 @@
 
 			<!-- Fallback for browsers with JS disabled -->
 			<noscript>
-				<div class="row" style="text-align: center; margin-bottom: 60px;">
-					<h2>To see more information, please enable Javascript and reload the page</h2>
-				</div>
-				<section id="about">	
+
+				<section id="about" style="">	
 					<div class="page-header">
 						<h1>About me <a href="json/about.json"><span class="label label-info">.json</span></a></h1>
 						
 					</div>
 
 					<div class="row section-content" id="about-container">
-		
+
 						<div class="span6">
 							<h2>Overview</h2>
 							<p>Born in 1987 in Germany, I finished school in 2008 with a specialization in Math and French and went to study knowledge engineering at the Maastricht University in the same year.</p><p>In 2010 I started working for the Department of Marketing and Communications of the Maastricht University as a student assistant working mainly on their website and other web projects.</p><p>From 2011 until 2012 I was a web developer at Ideaspool, where we continued the collaboration with the Maastricht University and a diverse list of other clients.</p><p>I enjoy working on user interfaces and data visualization, especially in the browser.</p>
@@ -51,15 +49,18 @@
 
 						<div class="span3">
 							<h2>Personal Facts</h2>
-							<dl><dt>Age</dt><dd>24</dd><dt>Nationality</dt><dd>German</dd><dt>Hometown</dt><dd>Kiel</dd><dt>Languages</dt><dd>German</dd><dd>English</dd><dd>French</dd><dd>Dutch</dd></dl>
+							<dl><dt>Age</dt><dd>24</dd><dt>Nationality</dt><dd>German</dd><dt>Hometown</dt><dd>Kiel</dd><dt>Languages</dt><dd>German</dd><dd>English</dd><dd>French</dd><dt>Interestes</dt><dd>AI</dd><dd>User Interfaces</dd><dd>Real-time web apps</dd></dl>
 						</div>
 
 						<div class="span3">
 							<h2>Technical skills</h2>
-							<dl><dt>Programming Languages</dt><dd>Javascript</dd><dd>Python</dd><dd>PHP</dd><dd>Java</dd><dt>Technologies</dt><dd>Backbone.js</dd><dd>Knockout.js</dd><dd>HTML5</dd><dd>LESS</dd><dd>Twitter Bootstrap</dd></dl>
+							<dl><dt>Programming Languages</dt><dd>Javascript</dd><dd>Python</dd><dd>PHP</dd><dd>Java</dd><dt>Databases</dt><dd>MySQL/SQLite</dd><dd>Redis</dd><dt>Technologies</dt><dd>Android</dd><dd>Node.js</dd><dd>Underscore.js</dd><dd>Backbone.js</dd><dd>Knockout.js</dd><dd>LESS</dd></dl>
 						</div>
 					</div>
 				</section>
+				<div class="row" style="text-align: center; margin-bottom: : 60px;">
+					<h2>To see more information, please enable Javascript and reload the page</h2>
+				</div>
 			</noscript>
 			<!-- End Fallback -->
 

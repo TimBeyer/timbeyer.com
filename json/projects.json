@@ -122,7 +122,7 @@
 			]
 		},
 
-		"description": "",
+		"description": "The UM Snooker project had as its goal to build a fully functioning snooker simulation and an AI that can play the game.\nIt is written in Java using jMonkey Engine 2 for the graphics.\n\nThe simulation is entirely event-based, meaning that all ball interactions are pre-calculated from several 4th degree\npolynomials by jumping from event to event (eg: ball sliding - ball rolling - ball collision) without calculating the\nintermediate steps.\nOnce completed, the events are then replayed for the player to see the results of his play.\n\nThe event-based nature of the simulation allowed me to add additional visual support for the player - such as slowing\ndown time before a ball is pocketed while centering the camera on the ball and giving a live preview of the user's play.\n\nThe simulation is high-performance and allows for calculating about 30 minutes of game time within about 5 seconds.\nThe high level of performance allowed me to additionally implement a live-preview of the AI's planning procedure to\nfacilitate debugging and make the AI's \"thoughts\" visible.",
 		"facts": [
 			{"label": "Language", "items": ["Java"]},
 			{"label": "Technologies", "items": ["jMonkey Engine"]},
@@ -174,7 +174,7 @@
 			]
 		},
 
-		"description": "",
+		"description": "This booking application complements the management backend written for the same customer.\nIt is a single-page app that is strictly API-driven.\n\nIt features dependency tracking, automatic surcharge and rebate handling based on rules defined in the backend,\npropositions for alternative days in case items are already sold out on the desired day and handles all of this\non the client-side only.\nThe application was built using Backbone.js with Handlebars for templating and Require.js for modularization during\ndevelopment and minification/optimization of the source code for production use.\nBuilt using Twitter Bootstrap, it handles scaling down to smaller screen sizes gracefully and thus allows for usage\non mobile devices out of the box.\n\nBecause of contractual reasons, it is currently not possible for me to link to the product.\nA private demonstration is possible, however, and can be arranged if you contact me.",
 		"facts": [
 			{"label": "Language", "items": ["Javascript (client)","PHP (server)"]},
 			{"label": "Technologies", "items": ["JSON","Backbone.js","Underscore.js","Handlebars","Require.js","LESS","Bootstrap"]},
@@ -192,9 +192,9 @@
 			"id": "cavenav-carousel",
 			"actionButtons": [
 				{
-					"label": "Download",
-					"icon": "icon-download icon-white",
-					"link": "http://code.google.com/p/umsnooker/downloads/list",
+					"label": "Open presentation",
+					"icon": "icon-play icon-white",
+					"link": "http://prezi.com/bztqxo1znnyy/cavenav/",
 					"class": "btn-success",
 					"type": "link"
 				},
@@ -248,7 +248,8 @@
 		"description": "",
 		"facts": [
 			{"label": "Language", "items": ["Java"]},
-			{"label": "Technologies", "items": ["Android","JSON"]}
+			{"label": "Technologies", "items": ["Android","JSON"]},
+			{"label": "Links", "items": [{"link": "http://prezi.com/bztqxo1znnyy/cavenav/", "label": "Presentation for the 7th Hacker News Cologne meetup"}]}
 		]
 	},
 
