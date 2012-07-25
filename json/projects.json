@@ -1,4 +1,52 @@
 {
+	"fblookup": {
+		"name": "Facebook lookup for reddit",
+		"tabName": "FBLookup",
+		"tagLine": "A Chrome extension that makes username lookups at facebook",
+
+		"carousel": {
+			"id": "fblookup-carousel",
+			"actionButtons": [
+				{
+					"label": "Download",
+					"icon": "icon-download icon-white",
+					"link": "https://github.com/downloads/TheShellfishMeme/facebookLookupForReddit/facebookLookup.crx",
+					"class": "btn-success",
+					"type": "link"
+				},
+				{
+					"label": "Open repository",
+					"icon": "icon-file icon-white",
+					"link": "https://github.com/TheShellfishMeme/facebookLookupForReddit",
+					"class": "btn-primary",
+					"type": "link"
+				}
+			],
+			"items": [
+
+				{
+					"image": "img/fblookup/match-1170x300.png",
+					"caption": {
+						"heading": "Find matching user profiles",
+						"content": "Hovering over a username makes an automatic lookup via the facebook API to see if it matches any profiles."
+					}
+				},
+				{
+					"image": "img/fblookup/no-match-1170x300.png",
+					"caption": {
+						"heading": "Enjoy your privacy",
+						"content": "If nothing is found, you're still anonymous (kind of)."
+					}
+				}
+			]
+		},
+
+		"description": "This Chrome extension looks up reddit usernames via the Facebook API and displays the information if a potential match is found.\nAll you need to do is install it and hover over peoples' usernames.\n\nI built this because I wanted to learn how to write extensions for Chrome and I wanted to make a point about online privacy.\n\nPeople should be aware of the fact that using your common username for facebook will make it very easy to identify you.",
+		"facts": [
+			{"label": "Language", "items": ["Javascript"]},
+			{"label": "Technologies", "items": ["Chrome extension API"]}
+		]
+	},
 
 	"traffic": {
 		"name": "Traffic Sim",
@@ -245,7 +293,7 @@
 			]
 		},
 
-		"description": "",
+		"description": "Cavenav was created to tackle the problems that exist when navigating only with a paper map and a compass without access to GPS.\n",
 		"facts": [
 			{"label": "Language", "items": ["Java"]},
 			{"label": "Technologies", "items": ["Android","JSON"]},
