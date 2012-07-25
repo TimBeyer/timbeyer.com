@@ -1,4 +1,4 @@
-(function(){
+(function(app){
 
 
 	var domReady = $.Deferred();
@@ -30,7 +30,7 @@
 		/*
 			Render navigation
 		*/
-		var subnav = new tbapp.views.NavbarView();
+		var subnav = new app.views.NavbarView();
 		var $subnavEl = $(subnav.render().el);
 		$subnavEl.hide();
 		$('.main-content').append($subnavEl);
@@ -38,7 +38,7 @@
 		/* 
 			Render about View
 		*/
-		var aboutSection = new tbapp.views.SectionView({
+		var aboutSection = new app.views.SectionView({
 			id: "about",
 			shortTitle: "About",
 			contentData: {
@@ -47,7 +47,7 @@
 			}
 		});
 
-		var aboutView = new tbapp.views.SectionContentView({
+		var aboutView = new app.views.SectionContentView({
 			template: Handlebars.compile($('#about-page-tmpl').html())
 		});
 
@@ -66,7 +66,7 @@
 			Render project views
 		*/
 
-		var projectSection = new tbapp.views.SectionView({
+		var projectSection = new app.views.SectionView({
 			id: "projects",
 			shortTitle: "Projects",
 			contentData: {
@@ -83,7 +83,7 @@
 		subnav.addSection(projectSection);
 
 
-		var projectsView = new tbapp.views.ProjectsView({
+		var projectsView = new app.views.ProjectsView({
 			projects: data.projects
 		});
 
@@ -110,13 +110,8 @@
 			},fadeInDebounce));
 		}, additionalWait);
 
-
-	})
-
+	});
 
 
-	$(function(){
 
-
-	})
-})();
+}(window.tbapp));

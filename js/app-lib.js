@@ -1,4 +1,4 @@
-(function(ns){
+(function(namespace){
 
 	var app = {
 
@@ -117,12 +117,10 @@
 				processScroll: function(){
 					var $win = $(window)
 				    , $nav = this.$el
-				    , navTop = this.navTop
+				    , navTop = this.navTop;
 
 
-				    // Add placeholder logic here
-
-					var i, scrollTop = $win.scrollTop()
+					var i, scrollTop = $win.scrollTop();
 			    	if (scrollTop >= navTop && !this.isFixed) {
 			    		this.isFixed = true;
 			    		$nav.addClass('subnav-fixed');
@@ -191,7 +189,6 @@
 						this.$('#' + tab.id).append(tab.view.render().el);
 					},this);
 
-					//this.$('.nav a').first().click();
 
 					return this;
 				},
@@ -370,6 +367,6 @@
 		}
 	};
 
-	ns.tbapp = app;
+	namespace.tbapp = app;
  
-})(window);
+}(window));

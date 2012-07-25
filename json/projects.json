@@ -8,7 +8,7 @@
 			"id": "fblookup-carousel",
 			"actionButtons": [
 				{
-					"label": "Download",
+					"label": "Install Extension",
 					"icon": "icon-download icon-white",
 					"link": "https://github.com/downloads/TheShellfishMeme/facebookLookupForReddit/facebookLookup.crx",
 					"class": "btn-success",
@@ -41,7 +41,7 @@
 			]
 		},
 
-		"description": "This Chrome extension looks up reddit usernames via the Facebook API and displays the information if a potential match is found.\nAll you need to do is install it and hover over peoples' usernames.\n\nI built this because I wanted to learn how to write extensions for Chrome and I wanted to make a point about online privacy.\n\nPeople should be aware of the fact that using your common username for facebook will make it very easy to identify you.",
+		"description": "This Chrome extension looks up reddit usernames via the Facebook API and displays the information if a potential match is found. All you need to do is install it and hover over peoples' usernames.\n\nI built this because I wanted to learn how to write extensions for Chrome and I wanted to make a point about online privacy.\n\nPeople should be aware of the fact that using your common username for facebook will make it very easy to identify you.",
 		"facts": [
 			{"label": "Language", "items": ["Javascript"]},
 			{"label": "Technologies", "items": ["Chrome extension API"]}
