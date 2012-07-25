@@ -48,6 +48,76 @@
 		]
 	},
 
+	"cavenav": {
+		"name": "Cavenav",
+		"tabName": "Cavenav",
+		"tagLine": "A virtual map created together with <a href='http://misera.org' target='blank'>Thomas Misera</a> to facilitate exploring the cave systems around Maastricht",
+
+		"carousel": {
+			"id": "cavenav-carousel",
+			"actionButtons": [
+				{
+					"label": "Open presentation",
+					"icon": "icon-play icon-white",
+					"link": "http://prezi.com/bztqxo1znnyy/cavenav/",
+					"class": "btn-success",
+					"type": "link"
+				},
+				{
+					"label": "Open repository",
+					"icon": "icon-file icon-white",
+					"link": "https://github.com/modemuser/CaveNav",
+					"class": "btn-primary",
+					"type": "link"
+				}
+			],
+			"items": [
+				{
+					"image": "img/cavenav/routing_2-1170x300.png",
+					"caption": {
+						"heading": "Compass supported map",
+						"content": "Always stays at the correct rotation. A separate compass is no longer required."
+					}
+				},
+				{
+					"image": "img/cavenav/raycaster-1170x300.png",
+					"caption": {
+						"heading": "Raycaster",
+						"content": "Gives you an impression what your surroundings should look like."
+					}
+				},	
+				{
+					"image": "img/cavenav/routing-1170x300.png",
+					"caption": {
+						"heading": "Routing",
+						"content": "Let your tablet plan your way. It's optimal."
+					}
+				},	
+				{
+					"image": "img/cavenav/modes-1170x300.png",
+					"caption": {
+						"heading": "4 Modes",
+						"content": "Look around, find the shortest path to your destionation, edit the graph and add points of interest."
+					}
+				},			
+				{
+					"image": "img/cavenav/options-1170x300.png",
+					"caption": {
+						"heading": "Flashlight included",
+						"content": "Helps walking safely in complete darkness"
+					}
+				}				
+			]
+		},
+
+		"description": "Cavenav was created to tackle the problems that exist when navigating only with a paper map and a compass without access to GPS.\nWatch the presentation for some more detailed information.",
+		"facts": [
+			{"label": "Language", "items": ["Java"]},
+			{"label": "Technologies", "items": ["Android","JSON"]},
+			{"label": "Links", "items": [{"link": "http://prezi.com/bztqxo1znnyy/cavenav/", "label": "Presentation for the 7th Hacker News Cologne meetup"}]}
+		]
+	},
+
 	"traffic": {
 		"name": "Traffic Sim",
 		"tabName": "Traffic",
@@ -231,75 +301,6 @@
 	},
 
 
-	"cavenav": {
-		"name": "Cavenav",
-		"tabName": "Cavenav",
-		"tagLine": "A virtual map created together with <a href='http://misera.org' target='blank'>Thomas Misera</a> to facilitate exploring the cave systems around Maastricht",
-
-		"carousel": {
-			"id": "cavenav-carousel",
-			"actionButtons": [
-				{
-					"label": "Open presentation",
-					"icon": "icon-play icon-white",
-					"link": "http://prezi.com/bztqxo1znnyy/cavenav/",
-					"class": "btn-success",
-					"type": "link"
-				},
-				{
-					"label": "Open repository",
-					"icon": "icon-file icon-white",
-					"link": "https://github.com/modemuser/CaveNav",
-					"class": "btn-primary",
-					"type": "link"
-				}
-			],
-			"items": [
-				{
-					"image": "img/cavenav/routing_2-1170x300.png",
-					"caption": {
-						"heading": "Compass supported map",
-						"content": "Always stays at the correct rotation. A separate compass is no longer required."
-					}
-				},
-				{
-					"image": "img/cavenav/raycaster-1170x300.png",
-					"caption": {
-						"heading": "Raycaster",
-						"content": "Gives you an impression what your surroundings should look like."
-					}
-				},	
-				{
-					"image": "img/cavenav/routing-1170x300.png",
-					"caption": {
-						"heading": "Routing",
-						"content": "Let your tablet plan your way. It's optimal."
-					}
-				},	
-				{
-					"image": "img/cavenav/modes-1170x300.png",
-					"caption": {
-						"heading": "4 Modes",
-						"content": "Look around, find the shortest path to your destionation, edit the graph and add points of interest."
-					}
-				},			
-				{
-					"image": "img/cavenav/options-1170x300.png",
-					"caption": {
-						"heading": "Flashlight included",
-						"content": "Helps walking safely in complete darkness"
-					}
-				}				
-			]
-		},
-
-		"description": "Cavenav was created to tackle the problems that exist when navigating only with a paper map and a compass without access to GPS.\n",
-		"facts": [
-			{"label": "Language", "items": ["Java"]},
-			{"label": "Technologies", "items": ["Android","JSON"]},
-			{"label": "Links", "items": [{"link": "http://prezi.com/bztqxo1znnyy/cavenav/", "label": "Presentation for the 7th Hacker News Cologne meetup"}]}
-		]
-	},
 
 	"spiro": {
 		"name": "Spirograph",
